@@ -31,13 +31,26 @@
         }
 
         /* Logo 區域 */
-        .logo-area {
-            margin-bottom: 50px;
-        }
-        .logo-area img {
-            width: 200px;
-            height: auto;
-        }
+       /* 修改 Logo 容器，讓它在手機上更靈活 */
+.logo-area {
+    margin-bottom: 30px;
+    padding: 20px 0;
+}
+
+.logo-area img {
+    width: 280px; /* 手機上適中的寬度 */
+    max-width: 90%; /* 確保不超出螢幕 */
+    height: auto;
+    /* 讓 Logo 輕微浮現的優雅感 */
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.05)); 
+}
+
+/* 針對電腦版稍微放大 */
+@media (min-width: 768px) {
+    .logo-area img {
+        width: 350px;
+    }
+}
 
         h1, h2, h3 { font-family: 'Noto Serif TC', serif; letter-spacing: 3px; }
 
@@ -215,4 +228,5 @@
 
 </body>
 </html>
+
 
