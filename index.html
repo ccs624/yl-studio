@@ -34,18 +34,32 @@
         }
 
         /* 橫式 Logo 優化 */
-        .logo-area {
-            margin: 40px 0 50px 0;
-            display: flex;
-            justify-content: center;
-        }
-        .logo-area img {
-            width: 320px; /* 橫式 Logo 寬度 */
-            max-width: 85%;
-            height: auto;
-            mix-blend-mode: multiply; /* 讓 Logo 與米色背景融合 */
-            filter: grayscale(1); /* 確保顏色純粹 */
-        }
+       /* 橫式 Logo 放大優化 */
+.logo-area {
+    margin: 50px 0 60px 0; /* 增加上下間距，讓視覺呼吸感更好 */
+    display: flex;
+    justify-content: center;
+}
+
+.logo-area img {
+    /* 電腦版建議寬度 */
+    width: 450px; 
+    /* 確保在手機上不會爆出去，且兩邊留下一點點邊距 */
+    max-width: 92%; 
+    height: auto;
+    mix-blend-mode: multiply; /* 與米色背景融合 */
+    transition: var(--transition);
+}
+
+/* 針對小螢幕手機微調 */
+@media (max-width: 480px) {
+    .logo-area {
+        margin: 40px 0 40px 0;
+    }
+    .logo-area img {
+        width: 380px; /* 手機端視覺上儘量撐滿 */
+    }
+}
 
         h1, h2, h3 { font-family: 'Noto Serif TC', serif; letter-spacing: 3px; }
 
@@ -201,6 +215,7 @@
 
 </body>
 </html>
+
 
 
 
